@@ -49,7 +49,7 @@ def init():
 
 def update():
     game_world.update()
-    game_world.halde_collisions()
+    game_world.handle_collisions()
 
 def draw():
     clear_canvas()

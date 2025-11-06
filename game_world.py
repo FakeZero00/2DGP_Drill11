@@ -67,7 +67,7 @@ def add_collision_pairs(group, a, b):
     if b:
         collision_pairs[group][1].append(b)
 
-def halde_collisions():
+def handle_collisions():
     #등록된 모든 충돌 그룹에 대해 충돌 검사 수행
     for group, pairs in collision_pairs.items():
         a_group, b_group = pairs

@@ -3,6 +3,7 @@ from pico2d import *
 
 import game_framework
 import game_world
+import grass
 
 from boy import Boy
 from grass import Grass
@@ -26,14 +27,25 @@ def init():
 
     grass = Grass()
     game_world.add_object(grass, 0)
+    game_world.add_collision_pairs('grass:ball', grass, None)
 
     boy = Boy()
     game_world.add_object(boy, 1)
 
+    global balls
+    balls = [Ball(random.randint(200, 1600), 60, 0) for _ in range(20)]
+    game_world.add_objects(balls, 1)
+
+    game_world.add_collision_pairs('boy:ball', boy, None)
+    for ball in balls:
+        game_world.add_collision_pairs('boy:ball', None, ball)
+
+    zombies = [Zombie() for _ in range(4)]
+    game_world.add_objects(zombies, 1)
 
 def update():
     game_world.update()
-
+    game_world.halde_collisions()
 
 def draw():
     clear_canvas()

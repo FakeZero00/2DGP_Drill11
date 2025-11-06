@@ -5,6 +5,7 @@ import game_world
 
 from pico2d import *
 
+#Drill #11 제출 - 2022182034 임성진
 # zombie Run Speed
 PIXEL_PER_METER = (10.0 / 0.3)  # 10 pixel 30 cm
 RUN_SPEED_KMPH = 10.0  # Km / Hour

@@ -59,6 +59,6 @@ class Zombie:
 
     def handle_event(self, group, other):
         if group == 'zombie:ball':
-            if other.stopped:
+            if not other.stopped:
                 if self.size == 200: self.size = 100
                 else: game_world.remove_object(self)
